@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+
+<head>
+</head>
+
+<body>
+    <!-- REF : http://api.jquery.com/jquery.ajax/ -->
+    <!-- REF : https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API -->
+    <!-- REF : https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch-->
+    <!-- REF : http://www.omdbapi.com/ -->
+    <!-- REF : http://www.omdbapi.com/?s=spider man&apikey=d088aa8d -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script>
+        const apiUrl = 'http://www.omdbapi.com/?s=spider man&apikey=d088aa8d';
+        //Fetch
+        fetch(apiUrl)
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                //Data here
+            })
+            .catch((error) => console.log(error));
+
+        //JQuery Ajax
+        $.ajax({
+            url: apiUrl,
+            success: function (data) {
+                //Data here
+            }
+        });
+
+
+    </script>
+
+</body>
+
+</html>

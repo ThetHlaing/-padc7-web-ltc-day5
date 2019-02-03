@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>PADC Myanmar - Exercise</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    #dog-breed {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+    }
+
+    #dog-breed li {
+      border-radius: 5px;
+      box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
+      max-width: 150px;
+      margin: 5px;
+    }
+
+    #dog-breed li img {
+      max-width: 100%;
+    }
+
+    #dog-breed li div {
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Create a list of dog breed -->
+  <!-- Implement a dog class with image, breed and name as properties -->
+  <!-- Implement display method which return div with image, name and breed-->
+  <!-- Create 3 dog objects and display inside each li-->
+  <ul id="dog-breed">
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+  <script>
+    class Dog {
+
+      constructor(image,breed,name){
+        this.image = image;
+        this.breed = breed;
+        this.name = name;
+      }
+
+      display() {
+        return `
+          <div>
+              <img src="${this.image}"/>
+              <div>${this.breed} - ${this.name}</div>
+          </div>
+        `
+      }
+    }
+
+    //create dog objects
+    const dog1 = new Dog("https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/11/01142236/Poodle-Care1.jpg","Labrador Retriever", "Aung Nat");
+    const dog2 = new Dog("https://vetstreet.brightspotcdn.com/dims4/default/3410cbe/2147483647/crop/432x371%2B156%2B0/resize/320x275/quality/90/?url=https%3A%2F%2Fvetstreet-brightspot.s3.amazonaws.com%2F6a%2Fa5%2F6f2cf3ee4fc08c8b251f4876dd8e%2Fbrussels-griffon-ap-0qlbnz-645x-380.jpg","Poodle", "Yan Lone");
+    const dog3 = new Dog("https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/11/01142236/Poodle-Care1.jpg","Poodle", "STH");
+    //select li and insert returned html as object
+    document.querySelector("#dog-breed li:first-child").innerHTML = dog1.display();
+    document.querySelector("#dog-breed li:nth-child(2)").innerHTML = dog2.display();
+    document.querySelector("#dog-breed li:nth-child(3)").innerHTML = dog3.display();
+  </script>
+</body>
+
+</html>
